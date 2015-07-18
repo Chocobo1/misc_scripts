@@ -28,7 +28,7 @@ def prepare(work_path , orig_name , tmp_name):
 
 
 def cleanup(new_name, tmp_path , orig_name):
-	shutil.move(os.path.join(tmp_path, new_name), orig_name)
+	shutil.move(os.path.join(tmp_path, new_name), os.path.splitext(orig_name)[0] + ".png")
 	shutil.rmtree(tmp_path)
 
 
